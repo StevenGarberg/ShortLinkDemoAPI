@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
-        <Nullable>disable</Nullable>
+        <Nullable>enable</Nullable>
 
         <IsPackable>false</IsPackable>
     </PropertyGroup>
@@ -23,13 +23,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers" />
-      <Folder Include="Repositories" />
-      <Folder Include="Services" />
+      <Folder Include="Exceptions" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ShortLink.API\ShortLink.API.csproj" />
+      <ProjectReference Include="..\ShortLink.API.Models\ShortLink.API.Models.csproj" />
     </ItemGroup>
 
 </Project>
