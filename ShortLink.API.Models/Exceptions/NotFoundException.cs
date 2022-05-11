@@ -1,4 +1,6 @@
-﻿namespace ShortLink.API.Models.Exceptions;
+﻿using Microsoft.AspNetCore.Http;
+
+namespace ShortLink.API.Models.Exceptions;
 
 public class NotFoundException : ApiException
 {

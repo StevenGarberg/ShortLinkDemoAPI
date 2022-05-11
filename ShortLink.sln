@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortLink.API", "ShortLink.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortLink.API.Tests", "ShortLink.API.Tests\ShortLink.API.Tests.csproj", "{F00AD823-045C-4387-9A36-39B041E2C571}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortLink.API.Models", "ShortLink.API.Models\ShortLink.API.Models.csproj", "{88B656C8-0E73-4D01-9048-2D676812DB44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{F00AD823-045C-4387-9A36-39B041E2C571}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F00AD823-045C-4387-9A36-39B041E2C571}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F00AD823-045C-4387-9A36-39B041E2C571}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88B656C8-0E73-4D01-9048-2D676812DB44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88B656C8-0E73-4D01-9048-2D676812DB44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88B656C8-0E73-4D01-9048-2D676812DB44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88B656C8-0E73-4D01-9048-2D676812DB44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
