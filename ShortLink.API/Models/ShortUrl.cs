@@ -3,13 +3,13 @@
 public class ShortUrl
 {
     public string OriginalUrl { get; }
-    public string EncodedUrl { get; }
+    public string Code { get; }
     public DateTime CreatedAt { get; }
 
-    public ShortUrl(string originalUrl, string encodedUrl)
+    public ShortUrl(string originalUrl, string code)
     {
         OriginalUrl = originalUrl;
-        EncodedUrl = encodedUrl;
+        Code = code;
         CreatedAt = DateTime.UtcNow;
     }
 }
