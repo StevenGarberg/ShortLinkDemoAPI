@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ShortLink.API.Models.Exceptions;
 using ShortLink.API.Models.Requests;
 using ShortLink.API.Models.Responses;
 using ShortLink.API.Services;
@@ -29,7 +30,7 @@ public class UrlController : ControllerBase
         {
             return new ObjectResult(new ErrorResponse(e))
             {
-                StatusCode = StatusCodes.Status400BadRequest
+                StatusCode = e is ApiException apiException ? apiException.StatusCode : StatusCodes.Status400BadRequest
             };
         }
     }
@@ -48,7 +49,7 @@ public class UrlController : ControllerBase
         {
             return new ObjectResult(new ErrorResponse(e))
             {
-                StatusCode = StatusCodes.Status400BadRequest
+                StatusCode = e is ApiException apiException ? apiException.StatusCode : StatusCodes.Status400BadRequest
             };
         }
     }
