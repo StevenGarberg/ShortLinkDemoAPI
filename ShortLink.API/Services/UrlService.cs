@@ -1,5 +1,6 @@
 ﻿using ShortLink.API.Models.Requests;
 using ShortLink.API.Models.Responses;
+using ShortLink.API.Repositories;
 
 namespace ShortLink.API.Services;
 
@@ -22,6 +23,13 @@ public interface IUrlService
 
 public class UrlService : IUrlService
 {
+    private readonly IUrlRepository _urlRepository;
+    
+    public UrlService(IUrlRepository urlRepository)
+    {
+        _urlRepository = urlRepository;
+    }
+    
     public Task<UrlResponse> Encode(UrlRequest request)
     {
         throw new NotImplementedException();
