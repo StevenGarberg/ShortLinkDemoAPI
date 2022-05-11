@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Reflection.Metadata;
+using Microsoft.AspNetCore.Mvc;
+using ShortLink.API.Models;
 using ShortLink.API.Models.Exceptions;
 using ShortLink.API.Models.Requests;
 using ShortLink.API.Models.Responses;
@@ -22,17 +24,9 @@ public class UrlController : ControllerBase
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
     public async Task<IActionResult> Encode([FromBody] UrlRequest request)
     {
-        try
-        {
-            return Ok(await _urlService.Encode(request));
-        }
-        catch(Exception e)
-        {
-            return new ObjectResult(new ErrorResponse(e))
-            {
-                StatusCode = e is ApiException apiException ? apiException.StatusCode : StatusCodes.Status400BadRequest
-            };
-        }
+        return await HandleAction(
+            _urlService.Encode(request)
+        );
     }
     
     [HttpPost("decode")]
@@ -41,9 +35,25 @@ public class UrlController : ControllerBase
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
     public async Task<IActionResult> Decode([FromBody] UrlRequest request)
     {
+        return await HandleAction(
+            _urlService.Decode(request)
+        );
+    }
+
+    [HttpGet("fetch")]
+    [ProducesResponseType(typeof(IReadOnlyCollection<ShortUrl>), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetAll()
+    {
+        return await HandleAction(
+            _urlService.GetAll()
+        );
+    }
+
+    private async Task<IActionResult> HandleAction<T>(Task<T> task) where T : class
+    {
         try
         {
-            return Ok(await _urlService.Decode(request));
+            return Ok(await task);
         }
         catch(Exception e)
         {

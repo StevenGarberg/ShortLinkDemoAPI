@@ -1,4 +1,5 @@
-﻿using ShortLink.API.Models;
+﻿using System.Collections.Immutable;
+using ShortLink.API.Models;
 
 namespace ShortLink.API.Repositories;
 
@@ -25,6 +26,12 @@ public interface IUrlRepository
     /// <param name="length">Optional length, defaults to 6</param>
     /// <returns>Code string</returns>
     Task<string> GenerateCode(int length = 6);
+
+    /// <summary>
+    /// Retrieves all Short URLs
+    /// </summary>
+    /// <returns>Collection of Short Url</returns>
+    Task<IReadOnlyCollection<ShortUrl>> GetAll();
 }
 
 public class UrlRepository : IUrlRepository
@@ -57,5 +64,10 @@ public class UrlRepository : IUrlRepository
         }
         
         return await Task.FromResult(new string(code));
+    }
+
+    public async Task<IReadOnlyCollection<ShortUrl>> GetAll()
+    {
+        return await Task.FromResult(Data.Values.ToImmutableArray());
     }
 }

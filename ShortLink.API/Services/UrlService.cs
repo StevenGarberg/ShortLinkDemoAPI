@@ -21,6 +21,12 @@ public interface IUrlService
     /// <param name="request">URL Request</param>
     /// <returns>URL Response</returns>
     Task<UrlResponse> Decode(UrlRequest request);
+
+    /// <summary>
+    /// Retrieves all Short URLs
+    /// </summary>
+    /// <returns>Collection of Short Url</returns>
+    Task<IReadOnlyCollection<ShortUrl>> GetAll();
 }
 
 public class UrlService : IUrlService
@@ -69,5 +75,10 @@ public class UrlService : IUrlService
         if (shortUrl == null) throw new NotFoundException();
         
         return new UrlResponse(shortUrl.OriginalUrl);
+    }
+
+    public async Task<IReadOnlyCollection<ShortUrl>> GetAll()
+    {
+        return await _urlRepository.GetAll();
     }
 }
