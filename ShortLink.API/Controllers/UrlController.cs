@@ -16,6 +16,9 @@ public class UrlController : ControllerBase
     }
     
     [HttpPost("encode")]
+    [ProducesResponseType(typeof(UrlResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
     public async Task<IActionResult> Encode([FromBody] UrlRequest request)
     {
         try
@@ -32,6 +35,9 @@ public class UrlController : ControllerBase
     }
     
     [HttpPost("decode")]
+    [ProducesResponseType(typeof(UrlResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
     public async Task<IActionResult> Decode([FromBody] UrlRequest request)
     {
         try
