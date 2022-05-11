@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ShortLink.API.Models.Requests;
+using ShortLink.API.Models.Responses;
 using ShortLink.API.Services;
 
 namespace ShortLink.API.Controllers;
@@ -14,14 +16,34 @@ public class UrlController : ControllerBase
     }
     
     [HttpPost("encode")]
-    public Task<IActionResult> Encode()
+    public async Task<IActionResult> Encode([FromBody] UrlRequest request)
     {
-        throw new NotImplementedException();
+        try
+        {
+            return Ok(await _urlService.Encode(request));
+        }
+        catch(Exception e)
+        {
+            return new ObjectResult(new ErrorResponse(e))
+            {
+                StatusCode = StatusCodes.Status400BadRequest
+            };
+        }
     }
     
     [HttpPost("decode")]
-    public Task<IActionResult> Decode()
+    public async Task<IActionResult> Decode([FromBody] UrlRequest request)
     {
-        throw new NotImplementedException();
+        try
+        {
+            return Ok(await _urlService.Decode(request));
+        }
+        catch(Exception e)
+        {
+            return new ObjectResult(new ErrorResponse(e))
+            {
+                StatusCode = StatusCodes.Status400BadRequest
+            };
+        }
     }
 }
