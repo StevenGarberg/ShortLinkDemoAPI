@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortLink.API", "ShortLink.API\ShortLink.API.csproj", "{1D310B75-1B14-474C-BB24-BC4A7E889AE8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortLink.API.Tests", "ShortLink.API.Tests\ShortLink.API.Tests.csproj", "{F00AD823-045C-4387-9A36-39B041E2C571}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{1D310B75-1B14-474C-BB24-BC4A7E889AE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D310B75-1B14-474C-BB24-BC4A7E889AE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D310B75-1B14-474C-BB24-BC4A7E889AE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F00AD823-045C-4387-9A36-39B041E2C571}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F00AD823-045C-4387-9A36-39B041E2C571}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F00AD823-045C-4387-9A36-39B041E2C571}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F00AD823-045C-4387-9A36-39B041E2C571}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
