@@ -25,7 +25,7 @@ public interface IUrlRepository
     /// </summary>
     /// <param name="length">Optional length, defaults to 6</param>
     /// <returns>Code string</returns>
-    Task<string> GenerateCode(int length = 6);
+    Task<string> GenerateCode(byte length = 6);
 
     /// <summary>
     /// Retrieves all Short URLs
@@ -51,7 +51,7 @@ public class UrlRepository : IUrlRepository
         return await Task.FromResult(shortUrl);
     }
 
-    public async Task<string> GenerateCode(int length = 6)
+    public async Task<string> GenerateCode(byte length = 6)
     {
         const string characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         
@@ -69,5 +69,13 @@ public class UrlRepository : IUrlRepository
     public async Task<IReadOnlyCollection<ShortUrl>> GetAll()
     {
         return await Task.FromResult(Data.Values.ToImmutableArray());
+    }
+
+    public static void SetUnitTestData(IDictionary<string, ShortUrl> data)
+    {
+        foreach (var (key, value) in data)
+        {
+            Data.TryAdd(key, value);
+        }
     }
 }
