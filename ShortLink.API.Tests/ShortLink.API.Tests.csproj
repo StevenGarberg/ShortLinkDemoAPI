@@ -23,12 +23,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers" />
-      <Folder Include="Repositories" />
-      <Folder Include="Services" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\ShortLink.API\ShortLink.API.csproj" />
     </ItemGroup>
 
