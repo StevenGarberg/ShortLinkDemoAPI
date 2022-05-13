@@ -31,7 +31,7 @@ public class UrlControllerTests
     #region Encode
     
     [Theory]
-    [InlineData("www.https://carlotz.com", "foo")]
+    [InlineData("https://www.google.com", "foo")]
     public async Task Encode_Returns_OkResult_ContainingUrlResponse_WhenRequestIsValid(string url, string encodedUrl)
     {
         var request = new UrlRequest { Url = url };
@@ -74,7 +74,7 @@ public class UrlControllerTests
     #region Decode
     
     [Theory]
-    [InlineData("foo", "www.https://carlotz.com")]
+    [InlineData("foo", "www.https://google.com")]
     public async Task Decode_Returns_OkResult_ContainingUrlResponse_WhenRequestIsValid(string encodedUrl, string decodedUrl)
     {
         var request = new UrlRequest { Url = encodedUrl };

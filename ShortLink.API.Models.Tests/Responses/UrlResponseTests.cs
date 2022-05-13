@@ -7,7 +7,7 @@ namespace ShortLink.API.Models.Tests.Responses;
 public class UrlResponseTests
 {
     [Theory]
-    [InlineData("https://www.carlotz.com"), InlineData("https://www.carlotz.com/search")]
+    [InlineData("https://www.google.com"), InlineData("https://www.google.com/search")]
     public void UrlResponse_Constructs_FromMessage(string url)
     {
         var response = new UrlResponse(url);

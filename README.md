@@ -4,7 +4,7 @@ Your assignment is to implement a URL shortening service using csharp and .Net.
 
 ### Brief
 
-ShortLink is a URL shortening service where you enter a URL such as https://codesubmit.io/library/react and it returns a short URL such as http://short.est/GeAi9K.
+ShortLink is a URL shortening service where you enter a URL such as https://google.com and it returns a short URL such as http://short.est/GeAi9K.
 
 ### Tasks
 
@@ -27,12 +27,3 @@ ShortLink is a URL shortening service where you enter a URL such as https://code
 -   Completeness: did you complete the features? Are all the tests running?
 -   Correctness: does the functionality act in sensible, thought-out ways?
 -   Maintainability: is it written in a clean, maintainable way?
-
-
-### CodeSubmit
-
-Please organize, design, test and document your code as if it were going into production - then push your changes to the master branch. After you have pushed your code, you may submit the assignment on the assignment page.
-
-All the best and happy coding,
-
-The Carlotz Team
